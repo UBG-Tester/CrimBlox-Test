@@ -1,0 +1,1 @@
+import assert from 'node:assert/strict';import {PhysicsWorld} from '../src/engine/physics.js';const w=new PhysicsWorld({gravity:10});const b={Position:{x:0,y:10,z:0},Velocity:{x:0,y:0,z:0},Anchored:false};w.add(b);w.step(.1);assert.ok(b.Position.y<10);assert.ok(b.Velocity.y<0);console.log('t4 physics ok');
