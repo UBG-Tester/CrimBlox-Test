@@ -80,8 +80,9 @@ export function buildGeometry() {
   const meshes = { cube: cube(), sphere: sphere(), cylinder: cylinder(), wedge: wedge(), cone: cone() };
   const verts = [], idx = [], shapes = {};
   for (const [name, m] of Object.entries(meshes)) {
-    shapes[name] = { base: verts.length / 6, first: idx.length, count: m.i.length };
-    verts.push(...m.v); idx.push(...m.i);
+    const base = verts.length / 6;
+    shapes[name] = { base, first: idx.length, count: m.i.length };
+    verts.push(...m.v); idx.push(...m.i.map(i => i + base));
   }
   return { vertices: new Float32Array(verts), indices: new Uint32Array(idx), shapes };
 }
