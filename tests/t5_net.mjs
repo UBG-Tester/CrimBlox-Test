@@ -1,0 +1,1 @@
+import assert from 'node:assert/strict';import {createMessage} from '../src/engine/net.js';const m=createMessage('ping',{x:1});assert.equal(m.type,'ping');assert.equal(m.payload.x,1);assert.ok(m.ts>0);console.log('t5 net ok');
