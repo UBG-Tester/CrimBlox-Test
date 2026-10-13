@@ -1,0 +1,11 @@
+{
+  "name": "crimson-web",
+  "private": true,
+  "type": "module",
+  "version": "0.1.0",
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "start": "node server/ws-server.mjs",
+    "test": "node tests/t1_datamodel.mjs && node tests/t2_serialize.mjs && node tests/t3_luau.mjs && node tests/t4_physics.mjs && node tests/t5_net.mjs && node tests/t6_pipeline.mjs"
+  }
+}
