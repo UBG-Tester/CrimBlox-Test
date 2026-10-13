@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: crimson-websocket-server
+    runtime: node
+    plan: free
+    region: ohio
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /health
+    autoDeploy: true
+  - type: web
+    name: crimson-web-engine
+    runtime: static
+    plan: free
+    region: ohio
+    buildCommand: ''
+    staticPublishPath: .
+    autoDeploy: true
