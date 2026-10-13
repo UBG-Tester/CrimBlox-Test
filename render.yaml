@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: crimson-websocket-server
+    name: crimblox-web-engine
     runtime: node
     plan: free
     region: ohio
@@ -8,11 +8,10 @@ services:
     startCommand: npm start
     healthCheckPath: /health
     autoDeploy: true
-  - type: web
-    name: crimson-web-engine
-    runtime: static
+  - type: static
+    name: crimblox-engine-static
     plan: free
     region: ohio
-    buildCommand: ''
+    buildCommand: ""
     staticPublishPath: .
     autoDeploy: true
