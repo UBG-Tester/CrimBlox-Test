@@ -1,0 +1,1 @@
+import assert from 'node:assert/strict';import {LuauVM} from '../src/engine/luau.js';const out=[];const vm=new LuauVM({print:v=>out.push(v)});vm.execute('local x = 42\nprint(x)');assert.deepEqual(out,[42]);console.log('t3 luau ok');
