@@ -1,0 +1,10 @@
+import assert from 'node:assert/strict';
+import {DataModel,Part} from '../src/engine/datamodel.js';
+const game=new DataModel();
+const part=new Part('Part');
+game.Workspace.AddChild(part);
+assert.equal(game.Workspace.FindFirstChild('Part'),part);
+assert.equal(part.Parent,game.Workspace);
+part.Destroy();
+assert.equal(game.Workspace.FindFirstChild('Part'),null);
+console.log('t1 datamodel ok');
